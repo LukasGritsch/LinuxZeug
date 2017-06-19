@@ -1,0 +1,82 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{listings}
+\usepackage[a4paper, left=2cm, right=2cm, top=3cm]{geometry}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\usepackage[utf8]{inputenc}
+\usepackage{lastpage}
+\fancyhead[L]{\today}
+\fancyhead[C]{Lukas Gritsch}
+\fancyhead[R]{Arch Setup}
+\fancyfoot[R]{Page \thepage }
+\fancyfoot[C]{}
+\begin{document}
+\begin{titlepage}
+\begin{LARGE}
+	\begin{center}
+		\textbf{ARCH LINUX SETUP}
+	\end{center}
+\end{LARGE}
+\end{titlepage}
+Guide für uefi arch also von uefi booten. 
+\begin{itemize}
+	\item[1] Tastatur umstellen. loadkeys de-latin1	
+	\item[2] wifi oder ethernet verbinden -- wifi-menu -o für wifi oder via dhcp ethernet. Überprüfen ob Internet gegeben -- ping google.com
+	\item[3] Überprüfen ob uefi gegeben mit efivar -l. -- Sollte an haufen zeilen kemmen
+	\item[4] lsblk gibt eine liste zurück welche harddrives man hat
+	\item[5] Als erstes alles von der Festplatte löschen auf der man Linux installieren möchte. gdisk dann x für experdmode und dann z damit die Festplatte leergezappt wird.
+	\item[6] Neue parditionen erzeugen am besten mit cgdisk /dev/sda. Man braucht minimum boot und root partition sollte aber auch eine swap partition machen:
+	\subitem boot 1000MiB (Arch schlägt ca 200 bis 300 vor aber es sollte a bisserl mehr sein 1 GB isch genug). Für die HEX zahl EF00 und name boot. 
+	\subitem swap (sollte immer Ram halbe sein) bsp. 4GiB. Hex: 8200. Name swap
+	\subitem root (man kann auch home partition machen hier nicht) Hex : enter drücken und name = root
+	Danach Write und dann quite drücken.
+	\item[7] reboot -- schauen ob partirionen geschreiben wurden
+	\item[8] Filesysteme
+	\subitem boot: mkfs.fat -F32 /dev/sda1
+	\subitem swap: mkswap /dev/sda2 -- swapon /dev/sda2
+	\subitem root mkfs.ext4 /dev/sda3
+	\item[9] Ein mount Verzeichnis machen - mkdir /mnt /mnt/boot 
+	\item[10] mountn der Partitionen:
+	\subitem mount /dev/sda3 /mnt
+	\subitem mount /dev/sda1 /mnt/boot
+	\item[11] Mirrors setzen 
+	\subitem cp /etc/pacman.d/mirrirlist /etc/pacman.d/mirrirlost.backup 
+	\subitem sed -i 's/\^{}\#Server/Server/' /etc/pacman.d/mirrirlist.backup dieses commando uncommentiert alle server
+	\subitem Mit rankmirror -n 6 /etc/pacman.d/mirrorlist.backup werden die besten 6 stehengelassen dies muss noch mit $>$ /etc/pacman.d/mirrorlist ins original file geschreiben werden
+	\item[12] install sachen: pacstrap -i /mnt base base-devel
+	\item[13] fstab serstellen : genfstab -U -p /mnt $>>$ /mnt/etc/fstab. Danach schauen ob alles passt mit nano /mnt/etc/ftsab
+	\item[14] aufs neue arch gehen arch-chroot /mnt
+	\item[15] Sprache setzen: nano /etc/local.gen mit STRG+W Sprache suchen (einfach Examples folgen zeigt ob deutsch englisch usw.) und dann suchen dies zweimal da es in den Examples ja schon vorkommt. Nun muss man noch locale-gen schreiben damit die sbrache auf das gerade unkommentierte gesetzt wird.
+	\item[16] echo LANG=(Sprache) > etc/locale.conf
+	\item[17] export LANG=(Sprache) 
+	\item[18] ls /usr/share/zoneinfo
+	\item[19] ln -s /usr/share/zoneinfo/Europe/Vienna > etc/localtime
+	\item[20] hwclock --systohc --utc
+	\item[21] echo (hostname) > etc/hostname
+	\item[22] nano /etc/pacman.conf        STRG+W multilib      uncommand multilib       add [archlinuxfr] return SigLevel = Never return Server = http://repo.archlinux.fr/\$arch
+	\item[23] pacman -Syu
+	\item[24] pacman -S yaourt
+	\item[25] passwd (passwort)
+	\item[26] useradd -m -g users -G wheel,storage,power -s /bin/bash (username)
+	\item[27] passwd	(username)
+	\item[28] EDITOR=nano visudo       STRG+W \%wheel     uncommand it       add       Defaults rootpw
+	\item[29] pacman -S bash-completion
+	\item[30] mount -t efivarfs efivarfs /sys/firmware/efi/efivars
+	\item[31] bootctl install
+	\item[32] cd /boot/loader
+	\item[33] nano loader.conf       alles löschen was drinsteht       add   default arch return timeout 4
+	\item[34] pacman -S vim
+	\item[35] cd entries
+	\item[36] vim arch.conf
+	\item[37] Dies muss nun so aussehen
+		\subitem title Atchlinux
+		\subitem linux /vmlinuz-linux
+		\subitem initrd /initramfs-linux.img
+		\subitem options root=(hier kommen die sachen rein die im nexten schritt eingelesen werden)
+	\item[38] in vim:    r! blkid
+	\item[39] Alles was hiter der root-patition nach PARTLABLE steht kopieren die "Gänsefüschen" entfernen und nach options root=   einfügen
+	\item[---] pacman -S dialog
+	\item[40] reboot 
+\end{itemize}
+	
+\end{document}
