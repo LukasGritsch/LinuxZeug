@@ -81,4 +81,31 @@ Guide für uefi arch also von uefi booten.
 	\item[40] reboot 
 \end{itemize}
 	
+	\clearpage
+	\begin{LARGE}
+		\begin{center}
+			\textbf{KDE PLASMA 5}
+		\end{center}
+	\end{LARGE}		
+	
+	\clearpage
+	
+	\begin{itemize}
+		\item[1] install xorg-server mit pacman -S xorg-server
+		\item[2] Schauen was man für eine Graphikkarte hat mit lspci | grep -e VGA -e 3D
+		\item[3] Driver installieren für :
+			\subitem ADM: xf86-video-amdgpu
+			\subitem Intel: xf86-video-intel
+			\subitem Nvida: xf86-video-nouveau
+			\subitem Wenn nicht sicher: xf86-video-vesa (sollte immer mit installiert werden)
+		\item[4] Man sollte immer einen Diplaymanager zum Desktopenvironment wählen hier KDE plasma und sddm
+		\item[5] pacman -S sddm (installiere Displaymanager) für gnome gdm, ligthdm ist universal
+		\item[6] pacman -S plasma kde-applications (Das installiert plasma und alle base kde applications) für gnome gnome und gnome-extra
+		\item[7] systemcl enable sddm
+		\item[8] reboot
+		
+	\end{itemize}
+	
+	
+	
 \end{document}

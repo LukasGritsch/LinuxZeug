@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Arch Linux) (preloaded format=pdflatex 2017.5.23)  20 JUN 2017 12:17
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Arch Linux) (preloaded format=pdflatex 2017.5.23)  22 JUN 2017 17:50
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -480,9 +480,19 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[1] [2] 
+[1] [2] [3] [4
+
+]
+Overfull \hbox (3.77458pt too wide) in paragraph at lines 101--102
+[]\OT1/cmr/m/n/12 Man sollte im-mer einen Diplay-man-ager zum Desk-topen-vi-ron
+-ment w^^?ahlen hier KDE plasma
+ []
+
+
 AED: lastpage setting LastPage
-[3] (./ArchSetup.aux) ) 
+[5
+
+] (./ArchSetup.aux) ) 
 Here is how much of TeX's memory you used:
  2564 strings out of 493013
  33403 string characters out of 6139317
@@ -491,13 +501,13 @@ Here is how much of TeX's memory you used:
  6982 words of font info for 25 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  26i,10n,43p,316b,256s stack positions out of 5000i,500n,10000p,200000b,80000s
- </home/lukas/.texlive/texmf-var/fonts/pk/ljfour/public/
-cm/cmmi12.600pk> </usr/share/texmf-dist/fonts/pk/ljfour/public/cm/dpi600/cmr12.
-pk> </home/lukas/.texlive/texmf-var/fonts/pk/ljfour/public/cm/cmbx12.1037pk>
-Output written on ArchSetup.pdf (4 pages, 34359 bytes).
+ </home/lukas/.texlive/texmf-var/fonts/pk/ljfour/public/cm
+/cmmi12.600pk> </usr/share/texmf-dist/fonts/pk/ljfour/public/cm/dpi600/cmr12.pk
+> </home/lukas/.texlive/texmf-var/fonts/pk/ljfour/public/cm/cmbx12.1037pk>
+Output written on ArchSetup.pdf (6 pages, 37940 bytes).
 PDF statistics:
- 123 PDF objects out of 1000 (max. 8388607)
- 22 compressed objects within 1 object stream
+ 134 PDF objects out of 1000 (max. 8388607)
+ 26 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
