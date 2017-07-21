@@ -1,11 +1,11 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Arch Linux) (preloaded format=pdflatex 2017.5.23)  22 JUN 2017 17:50
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Arch Linux) (preloaded format=pdflatex 2017.7.20)  21 JUL 2017 17:36
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **ArchSetup.tex
 (./ArchSetup.tex
-LaTeX2e <2017/01/01> patch level 3
-Babel <3.9r> and hyphenation patterns for 83 language(s) loaded.
+LaTeX2e <2017-04-15>
+Babel <3.10> and hyphenation patterns for 84 language(s) loaded.
 (/usr/share/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
 (/usr/share/texmf-dist/tex/latex/base/size12.clo
@@ -79,16 +79,17 @@ Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 \Gm@dimlist=\toks16
 )
 (/usr/share/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
-Package: fancyhdr 2016/09/06 3.8 Extensive control of page headers and footers
-\fancy@headwidth=\skip43
-\f@ncyO@elh=\skip44
-\f@ncyO@erh=\skip45
-\f@ncyO@olh=\skip46
-\f@ncyO@orh=\skip47
-\f@ncyO@elf=\skip48
-\f@ncyO@erf=\skip49
-\f@ncyO@olf=\skip50
-\f@ncyO@orf=\skip51
+Package: fancyhdr 2016/10/11 v3.9 Extensive control of page headers and footers
+
+\f@nch@headwidth=\skip43
+\f@nch@O@elh=\skip44
+\f@nch@O@erh=\skip45
+\f@nch@O@olh=\skip46
+\f@nch@O@orh=\skip47
+\f@nch@O@elf=\skip48
+\f@nch@O@erf=\skip49
+\f@nch@O@olf=\skip50
+\f@nch@O@orf=\skip51
 )
 (/usr/share/texmf-dist/tex/latex/base/inputenc.sty
 Package: inputenc 2015/03/17 v1.2c Input encoding file
@@ -482,32 +483,26 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 
 [1] [2] [3] [4
 
-]
-Overfull \hbox (3.77458pt too wide) in paragraph at lines 101--102
-[]\OT1/cmr/m/n/12 Man sollte im-mer einen Diplay-man-ager zum Desk-topen-vi-ron
--ment w^^?ahlen hier KDE plasma
- []
-
-
+] 
 AED: lastpage setting LastPage
 [5
 
 ] (./ArchSetup.aux) ) 
 Here is how much of TeX's memory you used:
- 2564 strings out of 493013
- 33403 string characters out of 6139317
- 101991 words of memory out of 5000000
- 6129 multiletter control sequences out of 15000+600000
+ 2564 strings out of 492995
+ 33508 string characters out of 6138756
+ 102376 words of memory out of 5000000
+ 6138 multiletter control sequences out of 15000+600000
  6982 words of font info for 25 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  26i,10n,43p,316b,256s stack positions out of 5000i,500n,10000p,200000b,80000s
- </home/lukas/.texlive/texmf-var/fonts/pk/ljfour/public/cm
-/cmmi12.600pk> </usr/share/texmf-dist/fonts/pk/ljfour/public/cm/dpi600/cmr12.pk
-> </home/lukas/.texlive/texmf-var/fonts/pk/ljfour/public/cm/cmbx12.1037pk>
-Output written on ArchSetup.pdf (6 pages, 37940 bytes).
+</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx
+12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/s
+hare/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb>
+Output written on ArchSetup.pdf (6 pages, 48835 bytes).
 PDF statistics:
- 134 PDF objects out of 1000 (max. 8388607)
- 26 compressed objects within 1 object stream
+ 35 PDF objects out of 1000 (max. 8388607)
+ 23 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -47,12 +47,12 @@ Guide für uefi arch also von uefi booten.
 	\item[13] fstab serstellen : genfstab -U -p /mnt $>>$ /mnt/etc/fstab. Danach schauen ob alles passt mit nano /mnt/etc/ftsab
 	\item[14] aufs neue arch gehen arch-chroot /mnt
 	\item[15] Sprache setzen: nano /etc/local.gen mit STRG+W Sprache suchen (einfach Examples folgen zeigt ob deutsch englisch usw.) und dann suchen dies zweimal da es in den Examples ja schon vorkommt. Nun muss man noch locale-gen schreiben damit die sbrache auf das gerade unkommentierte gesetzt wird.
-	\item[16] echo LANG=(Sprache) > etc/locale.conf
+	\item[16] echo LANG=(Sprache) $>$ etc/locale.conf
 	\item[17] export LANG=(Sprache) 
 	\item[18] ls /usr/share/zoneinfo
-	\item[19] ln -s /usr/share/zoneinfo/Europe/Vienna > etc/localtime
+	\item[19] ln -s /usr/share/zoneinfo/Europe/Vienna $>$ etc/localtime
 	\item[20] hwclock --systohc --utc
-	\item[21] echo (hostname) > etc/hostname
+	\item[21] echo (hostname) $>$ etc/hostname
 	\item[22] nano /etc/pacman.conf        STRG+W multilib      uncommand multilib       add [archlinuxfr] return SigLevel = Never return Server = http://repo.archlinux.fr/\$arch
 	\item[23] pacman -Syu
 	\item[24] pacman -S yaourt
@@ -84,7 +84,7 @@ Guide für uefi arch also von uefi booten.
 	\clearpage
 	\begin{LARGE}
 		\begin{center}
-			\textbf{KDE PLASMA 5}
+			\textbf{Displaymanager und Denktopumgebung}
 		\end{center}
 	\end{LARGE}		
 	
@@ -98,10 +98,10 @@ Guide für uefi arch also von uefi booten.
 			\subitem Intel: xf86-video-intel
 			\subitem Nvida: xf86-video-nouveau
 			\subitem Wenn nicht sicher: xf86-video-vesa (sollte immer mit installiert werden)
-		\item[4] Man sollte immer einen Diplaymanager zum Desktopenvironment wählen hier KDE plasma und sddm
-		\item[5] pacman -S sddm (installiere Displaymanager) für gnome gdm, ligthdm ist universal
-		\item[6] pacman -S plasma kde-applications (Das installiert plasma und alle base kde applications) für gnome gnome und gnome-extra
-		\item[7] systemcl enable sddm
+		\item[4] Man sollte immer einen Displaymanager zum Desktopenvironment wählen hier KDE plasma und sddm (für gnome - gdm, für LXDE - lxdm, universal - ligthdm) 
+		\item[5] pacman -S sddm (installiere Displaymanager) für gnome gdm, ligthdm ist universal, für LXDE lxde oder lxde-gtk3, für MATE mae oder mate-gtk3, für XFCE xfce4
+		\item[6] pacman -S plasma kde-applications (Das installiert plasma und alle base kde applications) für gnome gnome und gnome-extra für LXDE - N/A, fpr MATE - mate-extra, für XFCE xfce4-goodies
+		\item[7] systemcl enable sddm (oder eben der gewünschte Displaymanager)
 		\item[8] reboot
 		
 	\end{itemize}
