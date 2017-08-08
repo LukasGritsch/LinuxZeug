@@ -18,7 +18,8 @@
 	\end{center}
 \end{LARGE}
 \end{titlepage}
-Guide für uefi arch also von uefi booten. 
+\section{Arch installieren}
+Als erstes muss man von einem USB-Stick booten, auf welchem eine Arch version installiert ist.
 \begin{itemize}
 	\item[1] Tastatur umstellen. loadkeys de-latin1	
 	\item[2] wifi oder ethernet verbinden -- wifi-menu -o für wifi oder via dhcp ethernet. Überprüfen ob Internet gegeben -- ping google.com
@@ -82,14 +83,7 @@ Guide für uefi arch also von uefi booten.
 \end{itemize}
 	
 	\clearpage
-	\begin{LARGE}
-		\begin{center}
-			\textbf{Displaymanager und Denktopumgebung}
-		\end{center}
-	\end{LARGE}		
-	
-	\clearpage
-	
+	\section{Displaymanager und Desktopumgebung}
 	\begin{itemize}
 		\item[1] install xorg-server mit pacman -S xorg-server
 		\item[2] Schauen was man für eine Graphikkarte hat mit lspci | grep -e VGA -e 3D
